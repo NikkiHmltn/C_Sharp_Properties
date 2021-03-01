@@ -7,9 +7,14 @@ namespace Properties
         // public technically makes it insecure code because everyone has access to it
         private int length = 3;
         private int height;
-        public int width;
-        public int volume;
+        //public int width;
+        //public int volume;
 
+        //type "prop" double tap tab, set type and name. shorthand.
+        public int Width { get; set; }
+        public int Volume { get; set; }
+
+        //super short way to get and set without two separate methods
         public int Height
         {
             get{
@@ -17,8 +22,24 @@ namespace Properties
             }
             set
             {
-                height = value;
+                if (value < 0)
+                {
+                    //multiply with minus 1 to make it positive
+                    height = -value;
+
+                } else
+                {
+                    height = value;
+                }
+               
             }
+        }
+
+        public Box(int length, int height, int width)
+        {
+            this.length = length;
+            this.height = height;
+            this.Width = width;
         }
 
         public void SetLength(int length)
@@ -38,13 +59,13 @@ namespace Properties
 
         public int GetVolume()
         {
-            return this.length * this.width * this.height;
+            return this.length * this.Width * this.height;
         }
 
         public void DisplayInfo()
         {
             Console.WriteLine("Length is {0}, height is {1}, and the width is {2}, so the volume is {3}",
-                length, height, width, volume=length*height*width);
+                length, height, Width, Volume=length*height*Width);
         }
     }
 }

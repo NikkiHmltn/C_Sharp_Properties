@@ -6,9 +6,20 @@ namespace Properties
         //member variables
         // public technically makes it insecure code because everyone has access to it
         private int length = 3;
-        public int height;
+        private int height;
         public int width;
         public int volume;
+
+        public int Height
+        {
+            get{
+                return height;
+            }
+            set
+            {
+                height = value;
+            }
+        }
 
         public void SetLength(int length)
         {

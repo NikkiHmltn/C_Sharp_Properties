@@ -14,10 +14,13 @@ namespace Properties
 
             // getting the length is impossible too because its private
             // set up a public method to set the length to work around it
-            box.SetLength(5);
+            box.SetLength(-4);
             Console.WriteLine("Box length is " + box.GetLength());
+            Console.WriteLine("Box volume is " + box.GetVolume());
 
             box.DisplayInfo();
+
+
         }
     }
 }

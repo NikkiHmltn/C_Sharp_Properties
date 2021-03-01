@@ -12,12 +12,22 @@ namespace Properties
 
         public void SetLength(int length)
         {
+            if(length < 0)
+            {
+                throw new Exception("Length should be higher than 0");
+            }
             this.length = length;
+
         }
 
         public int GetLength()
         {
             return this.length;
+        }
+
+        public int GetVolume()
+        {
+            return this.length * this.width * this.height;
         }
 
         public void DisplayInfo()
